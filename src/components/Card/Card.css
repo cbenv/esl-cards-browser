@@ -1,0 +1,16 @@
+.card {
+  display: block;
+  max-width: 100%;
+  padding: 16px;
+  width: 333px;
+}
+
+.card__image {
+  flex: 1;
+  max-height: 540px;
+  max-width: 100%;
+}
+
+.card__name {
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+.data-list__entry {
+  display: flex;
+  margin: 2px 0;
+}
+
+.data-list__key {
+  font-weight: bold;
+  padding-right: 8px;
+  text-align: right;
+  width: 30%;
+}
+
+.data-list__value {
+  text-align: left;
+  width: 70%;
+}

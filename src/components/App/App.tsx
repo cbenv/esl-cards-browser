@@ -84,6 +84,7 @@ const App: React.FC = () => {
       <Main>
         <InfiniteScroll onIsAtBottomChange={setIsAtBottom}>
           <SearchInput defaultSearchText={nameFilter} inputPlaceholder="Search by name" onSearch={onSearch} />
+          {/* TODO: [nice-to-have] support more filters */}
           <Grid>
             {cards.map(card => <Card data={card} key={card.id} />)}
           </Grid>

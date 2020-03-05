@@ -26,11 +26,12 @@ const Card: React.FC<Props> = ({ data }) => {
     'Power': data.power ? `${data.power}` : undefined,
     'Rarity': data.rarity,
     'Unique': data.unique ? 'Yes' : 'No',
-    'Text': data.text,
+    'Text': data.text, // TODO: [nice-to-have] bold keywords in text
   };
 
   return (
     <div className="card">
+      {/* TODO: [nice-to-have] build Image component that can show loading indicator when the asset is being fetched */}
       <img alt={data.name} className="card__image" src={data.imageUrl} />
       <div className="card__info">
         <h2 className="card__name">{data.name}</h2>

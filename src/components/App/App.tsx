@@ -17,7 +17,8 @@ const PAGINATION_SIZE = 20;
 const App: React.FC = () => {
   const [cards, setCards] = useState<CardData[]>([]);
   const [pageNumber, setPageNumber] = useState(1);
-  const [nameFilter, setNameFilter] = useState('');
+  // TODO: [nice-to-have] preset nameFilter from url path, for easy bookmarking
+  const [nameFilter, setNameFilter] = useState(''); 
   const [hasError, setHasError] = useState(false);
   const [hasMore, setHasMore] = useState(false);
   const [isLoading, setIsLoading] = useState(false);

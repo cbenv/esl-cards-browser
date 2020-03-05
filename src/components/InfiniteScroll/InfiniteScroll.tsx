@@ -38,7 +38,8 @@ const InfiniteScroll: React.FC<Props> = ({ children, onIsAtBottomChange = noop }
         setIsAtBottom(browserHeight + scrollYPosition >= bottomElementYPosition);
       }
     }, SCROLL_THROTTLE_INTERVAL_MS);
-
+    
+    // TODO: [investigation] find out if using react's onScroll prop is feasible or better
     window.addEventListener('scroll', scrollListener, { capture: true });
     return window.removeEventListener('scroll', scrollListener);
   }, []);

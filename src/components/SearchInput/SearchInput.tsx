@@ -33,6 +33,7 @@ const SearchInput: React.FC<Props> = props => {
   }, []);
 
   const onResetButtonClick = useCallback(() => {
+    // only do something if the passed-down search text is not already empty
     if (defaultSearchText !== '') {
       setSearchText('');
       onSearch('');
@@ -40,13 +41,14 @@ const SearchInput: React.FC<Props> = props => {
   }, [defaultSearchText, onSearch]);
 
   const onSearchButtonClick = useCallback(() => {
+    // only do something if the passed-down search text is different from the search text typed in the input element
     if (defaultSearchText !== searchText) {
       onSearch(searchText);
     }
   }, [defaultSearchText, searchText, onSearch]);
 
   const onFormSubmit = useCallback((event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    event.preventDefault(); // prevent browser navigation
     onSearchButtonClick();
   }, [onSearchButtonClick]);
 

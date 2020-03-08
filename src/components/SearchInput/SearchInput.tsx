@@ -7,11 +7,11 @@ import './SearchInput.css';
 
 /* Setups */
 
-interface Props {
-  defaultSearchText?: string;
-  inputPlaceholder?: string;
+export interface Props {
   resetButtonText?: string;
   searchButtonText?: string;
+  searchPlaceholder?: string;
+  searchText?: string;
   onSearch?: (input: string) => void;
 }
 
@@ -19,10 +19,10 @@ interface Props {
 
 const SearchInput: React.FC<Props> = props => {
   const {
-    defaultSearchText = '',
-    inputPlaceholder = 'Search...',
     resetButtonText = 'Reset',
     searchButtonText = 'Search',
+    searchPlaceholder = 'Search...',
+    searchText: defaultSearchText = '',
     onSearch = noop
   } = props;
 
@@ -54,7 +54,7 @@ const SearchInput: React.FC<Props> = props => {
 
   return (
     <form className="search-input" onSubmit={onFormSubmit}>
-      <input className="search-input__input" onChange={onSearchTextChange} placeholder={inputPlaceholder} type="text" value={searchText}></input>
+      <input className="search-input__input" onChange={onSearchTextChange} placeholder={searchPlaceholder} type="text" value={searchText}></input>
       <div className="search-input__action-buttons">
         <button className="search-input__reset-button" onClick={onResetButtonClick}>{resetButtonText}</button>
         <button className="search-input__search-button" onClick={onSearchButtonClick}>{searchButtonText}</button>

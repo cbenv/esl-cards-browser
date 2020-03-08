@@ -44,14 +44,12 @@ const App: React.FC = () => {
       .then((data: GetCardsListResponse) => {
         const numberOfFetchedCards = pageNumber * PAGINATION_SIZE;
         setCards([...cards, ...data.cards]); // append cards to existing collection
+        setIsLoading(false);
         setHasMore(data._totalCount > numberOfFetchedCards);
       })
       .catch(error => {
-        console.error(error);
-        setHasError(true);
-      })
-      .finally(() => {
         setIsLoading(false);
+        setHasError(true);
       });
   }, [cards, nameFilter, pageNumber]);
 
@@ -84,7 +82,7 @@ const App: React.FC = () => {
       <Header>Elder Scrolls Legends Cards</Header>
       <Main>
         <InfiniteScroll onIsAtBottomChange={setIsAtBottom}>
-          <SearchInput defaultSearchText={nameFilter} inputPlaceholder="Search by name" onSearch={onSearch} />
+          <SearchInput onSearch={onSearch} searchPlaceholder="Search by name" searchText={nameFilter} />
           {/* TODO: [nice-to-have] support more filters */}
           <Grid>
             {cards.map(card => <Card data={card} key={card.id} />)}

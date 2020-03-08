@@ -1,19 +1,19 @@
 /* Imports */
 
-import React from 'react';
+import React from 'react'
 
-import './Header.css';
+import './Header.css'
 
 /* Component */
 
-const Header: React.FC = props => {
+const Header: React.FC = ({ children }) => {
   return (
     <header className="header">
-      {props.children}
+      {children}
     </header>
-  );
+  )
 }
 
 /* Exports */
 
-export default Header;
+export default Header

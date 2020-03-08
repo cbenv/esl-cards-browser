@@ -1,16 +1,16 @@
 /* Imports */
 
-import React from 'react';
+import React from 'react'
 
-import { CardData } from '../../interfaces/CardData';
-import { DataList } from '..';
+import { CardData } from '../../interfaces/CardData'
+import { DataList } from '..'
 
-import './Card.css';
+import './Card.css'
 
 /* Setups */
 
 interface Props {
-  data: CardData;
+  data: CardData
 }
 
 /* Component */
@@ -18,16 +18,16 @@ interface Props {
 const Card: React.FC<Props> = ({ data }) => {
   const cardInfo = {
     'Set Name': data.set && data.set.name,
-    'Type': data.type,
-    'Subtypes': data.subtypes && data.subtypes.join(', '),
-    'Attributes': data.attributes && data.attributes.join(', '),
-    'Cost': data.cost ? `${data.cost}` : undefined,
-    'Health': data.health ? `${data.health}` : undefined,
-    'Power': data.power ? `${data.power}` : undefined,
-    'Rarity': data.rarity,
-    'Unique': data.unique ? 'Yes' : 'No',
-    'Text': data.text, // TODO: [nice-to-have] bold keywords in text
-  };
+    Type: data.type,
+    Subtypes: data.subtypes && data.subtypes.join(', '),
+    Attributes: data.attributes && data.attributes.join(', '),
+    Cost: data.cost ? `${data.cost}` : undefined,
+    Health: data.health ? `${data.health}` : undefined,
+    Power: data.power ? `${data.power}` : undefined,
+    Rarity: data.rarity,
+    Unique: data.unique ? 'Yes' : 'No',
+    Text: data.text, // TODO: [nice-to-have] bold keywords in text
+  }
 
   return (
     <div className="card">
@@ -38,9 +38,9 @@ const Card: React.FC<Props> = ({ data }) => {
         <DataList data={cardInfo} />
       </div>
     </div>
-  );
+  )
 }
 
 /* Exports */
 
-export default Card;
+export default Card

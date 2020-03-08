@@ -1,8 +1,8 @@
 /* Imports */
 
-import React from 'react';
+import React from 'react'
 
-import './Grid.css';
+import './Grid.css'
 
 /* Component */
 
@@ -11,9 +11,9 @@ const Grid: React.FC = ({ children }) => {
     <div className="grid">
       {children}
     </div>
-  );
+  )
 }
 
 /* Exports */
 
-export default Grid;
+export default Grid

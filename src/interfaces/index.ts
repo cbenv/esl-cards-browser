@@ -1,2 +1,2 @@
-export * from './CardData';
-export * from './GetCardsListResponse';
+export * from './CardData'
+export * from './GetCardsListResponse'

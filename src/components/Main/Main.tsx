@@ -1,19 +1,19 @@
 /* Imports */
 
-import React from 'react';
+import React from 'react'
 
-import './Main.css';
+import './Main.css'
 
 /* Component */
 
-const Main: React.FC = props => {
+const Main: React.FC = ({ children }) => {
   return (
     <main className="main">
-      {props.children}
+      {children}
     </main>
-  );
+  )
 }
 
 /* Exports */
 
-export default Main;
+export default Main

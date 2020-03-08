@@ -1,7 +1,7 @@
-import { CardData } from './CardData';
+import { CardData } from './CardData'
 
 export interface GetCardsListResponse {
-  cards: CardData[];
-  _pageSize: number,
+  cards: CardData[]
+  _pageSize: number
   _totalCount: number
-};
+}

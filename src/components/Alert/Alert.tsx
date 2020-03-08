@@ -1,13 +1,13 @@
 /* Imports */
 
-import React from 'react';
+import React from 'react'
 
-import './Alert.css';
+import './Alert.css'
 
 /* Setups */
 
 interface Props {
-  level: 'info' | 'warn' | 'error';
+  level: 'info' | 'warn' | 'error'
 }
 
 /* Component */
@@ -17,9 +17,9 @@ const Alert: React.FC<Props> = ({ children, level = 'error' }) => {
     <div className={`alert alert-${level}`}>
       {children}
     </div>
-  );
+  )
 }
 
 /* Exports */
 
-export default Alert;
+export default Alert
